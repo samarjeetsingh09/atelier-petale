@@ -1,0 +1,251 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Atelier Pétale design tokens.
+   Values are lifted verbatim from the Stitch "Atelier Pétale" design system so
+   the build stays 1:1 with the source of truth. Do not re-derive these by eye.
+   --------------------------------------------------------------------------- */
+@theme {
+  /* Surfaces — warm ivory paper stack */
+  --color-surface: #fff8f6;
+  --color-surface-dim: #e3d8d3;
+  --color-surface-bright: #fff8f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fdf1ec;
+  --color-surface-container: #f8ebe6;
+  --color-surface-container-high: #f2e6e1;
+  --color-surface-container-highest: #ece0db;
+  --color-surface-variant: #ece0db;
+  --color-background: #fff8f6;
+
+  /* Ink */
+  --color-on-surface: #201a18;
+  --color-on-background: #201a18;
+  --color-on-surface-variant: #514345;
+  --color-outline: #837375;
+  --color-outline-variant: #d5c2c3;
+
+  /* Primary — dried rose */
+  --color-primary: #844f58;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #c98b94;
+  --color-on-primary-container: #52262e;
+  --color-primary-fixed: #ffd9dd;
+  --color-primary-fixed-dim: #f8b5be;
+  --color-on-primary-fixed: #350e17;
+  --color-on-primary-fixed-variant: #693841;
+
+  /* Secondary — eucalyptus sage */
+  --color-secondary: #4e635a;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #cee5da;
+  --color-on-secondary-container: #52675e;
+  --color-secondary-fixed: #d1e8dd;
+  --color-secondary-fixed-dim: #b5ccc1;
+  --color-on-secondary-fixed: #0b1f18;
+  --color-on-secondary-fixed-variant: #374b43;
+
+  /* Tertiary — muted blush */
+  --color-tertiary: #72585a;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #b49497;
+  --color-on-tertiary-container: #442d30;
+  --color-tertiary-fixed: #fedadd;
+  --color-tertiary-fixed-dim: #e1bec1;
+  --color-on-tertiary-fixed: #2a1619;
+  --color-on-tertiary-fixed-variant: #594043;
+
+  /* Inverse — toasts, overlays */
+  --color-inverse-surface: #362f2c;
+  --color-inverse-on-surface: #fbeee9;
+  --color-inverse-primary: #f8b5be;
+
+  /* Status */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* WhatsApp — a recognised signal colour, kept exact on purpose */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1ebe5d;
+
+  /* Typography */
+  --font-display: 'Playfair Display', ui-serif, Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --text-display-lg: 3.5rem;
+  --text-display-lg--line-height: 1.15;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 400;
+
+  --text-display-lg-mobile: 2.25rem;
+  --text-display-lg-mobile--line-height: 1.2;
+  --text-display-lg-mobile--letter-spacing: -0.01em;
+  --text-display-lg-mobile--font-weight: 400;
+
+  --text-headline-lg: 2.5rem;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 500;
+
+  --text-headline-lg-mobile: 1.75rem;
+  --text-headline-lg-mobile--line-height: 1.25;
+  --text-headline-lg-mobile--letter-spacing: 0em;
+  --text-headline-lg-mobile--font-weight: 500;
+
+  --text-headline-md: 1.75rem;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--letter-spacing: 0em;
+  --text-headline-md--font-weight: 500;
+
+  --text-headline-sm: 1.25rem;
+  --text-headline-sm--line-height: 1.35;
+  --text-headline-sm--letter-spacing: 0.01em;
+  --text-headline-sm--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--letter-spacing: 0em;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.5;
+  --text-body-md--letter-spacing: 0.005em;
+  --text-body-md--font-weight: 400;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.45;
+  --text-body-sm--letter-spacing: 0.01em;
+  --text-body-sm--font-weight: 400;
+
+  --text-label-lg: 0.875rem;
+  --text-label-lg--line-height: 1.2;
+  --text-label-lg--letter-spacing: 0.06em;
+  --text-label-lg--font-weight: 600;
+
+  --text-label-md: 0.75rem;
+  --text-label-md--line-height: 1.2;
+  --text-label-md--letter-spacing: 0.08em;
+  --text-label-md--font-weight: 600;
+
+  --text-label-sm: 0.6875rem;
+  --text-label-sm--line-height: 1.2;
+  --text-label-sm--letter-spacing: 0.1em;
+  --text-label-sm--font-weight: 500;
+
+  /* Named spacing from the Stitch system (numeric p-4 etc. still work) */
+  --spacing-space-2xs: 0.25rem;
+  --spacing-space-xs: 0.5rem;
+  --spacing-space-sm: 0.75rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2rem;
+  --spacing-space-2xl: 3rem;
+  --spacing-space-3xl: 4.5rem;
+  --spacing-space-4xl: 6rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-gutter-desktop: 2rem;
+
+  /* Editorial containers */
+  --container-editorial: 72rem;
+  --container-wide: 88rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    font-size: var(--text-body-md);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* One focus treatment for the whole site: keyboard only, always visible. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+
+  /* Never leave an image as a broken white box — the warm placeholder reads as
+     intentional while photography is still being swapped in. */
+  img {
+    background-color: var(--color-surface-container-high);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Material Symbols base. FILL is animated per-icon via the `filled` prop. */
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+  }
+  .material-symbols-outlined[data-filled='true'] {
+    font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
+}
+
+/* Motion is a garnish here, never load-bearing. Strip it on request. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
