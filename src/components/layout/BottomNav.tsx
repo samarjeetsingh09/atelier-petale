@@ -13,8 +13,19 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Primary"
-      className="fixed inset-x-0 bottom-0 z-50 px-4 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] md:hidden"
+      /* A short centred rule marks the top of the bar, and everything below it
+         is a frosted tray the pill floats in — so content scrolling underneath
+         softens instead of running into the tab bar. */
+      className={[
+        'fixed inset-x-0 bottom-0 z-50 md:hidden',
+        'bg-surface/60 backdrop-blur-xl',
+        'px-4 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))]',
+      ].join(' ')}
     >
+      <span
+        aria-hidden="true"
+        className="mx-auto mb-2 block h-px w-24 rounded-full bg-outline-variant/70"
+      />
       <ul
         className={`mx-auto flex h-[4.5rem] max-w-md items-stretch justify-around rounded-full border border-white/60 bg-surface/85 px-1.5 backdrop-blur-xl ${pillShadow}`}
       >

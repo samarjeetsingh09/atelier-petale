@@ -174,7 +174,7 @@ export function ProductDetail() {
       {/* Mobile sticky buy bar */}
       {/* Sits above the tab bar on mobile; the tab bar is gone from md, so it
           drops to the bottom edge there. */}
-      <div className="fixed inset-x-0 bottom-[calc(6.25rem+env(safe-area-inset-bottom,0px))] z-40 border-t border-outline-variant/40 bg-surface/95 px-gutter-mobile py-3 shadow-[0_-4px_20px_rgba(42,36,33,0.06)] backdrop-blur-xl md:bottom-0 md:px-6 lg:hidden">
+      <div className="fixed inset-x-0 bottom-[calc(6rem+env(safe-area-inset-bottom,0px))] z-40 border-t border-outline-variant/40 bg-surface/95 px-gutter-mobile py-3 shadow-[0_-4px_20px_rgba(42,36,33,0.06)] backdrop-blur-xl md:bottom-0 md:px-6 lg:hidden">
         <div className="mx-auto flex max-w-md items-center gap-3">
           <WishlistButton productName={product.name} />
           <AddToCartButton product={product} variant={variant} qty={qty} />

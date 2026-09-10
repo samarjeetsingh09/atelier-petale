@@ -33,7 +33,7 @@ export function AppShell() {
   );
 
   return (
-    // Bottom padding clears the floating tab pill (4.5rem tall + 1.5rem gap)
+    // Bottom padding clears the frosted tab tray (0.5 + rule + 0.5 + 4.5 + 0.5rem)
     // plus the device safe area, as one value so the parts cannot overwrite
     // each other.
     <div className="flex min-h-screen flex-col bg-surface pb-[calc(6.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
