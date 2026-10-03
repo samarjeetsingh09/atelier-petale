@@ -54,11 +54,11 @@ export function ProductDetail() {
           </div>
 
           {/* Product information */}
-          <div className="flex flex-col gap-space-md pt-space-lg lg:col-span-5 lg:sticky lg:top-28 lg:pt-0">
+          <div className="flex flex-col gap-space-md pt-space-lg lg:col-span-5 lg:sticky lg:top-40 lg:pt-0">
             <header className="flex flex-col gap-1">
               <div className="flex items-center justify-between gap-3">
-                <span className="text-label-md uppercase tracking-widest text-secondary">
-                  Artisanal bouquet series
+                <span className="font-script text-[1.35rem] leading-none md:text-[1.6rem] normal-case tracking-normal text-secondary">
+                  handmade bouquet
                 </span>
                 <a href="#reviews" className="inline-flex min-h-[44px] items-center gap-1">
                   <Rating value={product.rating} size={16} />
@@ -174,7 +174,7 @@ export function ProductDetail() {
       {/* Mobile sticky buy bar */}
       {/* Sits above the tab bar on mobile; the tab bar is gone from md, so it
           drops to the bottom edge there. */}
-      <div className="fixed inset-x-0 bottom-[calc(6rem+env(safe-area-inset-bottom,0px))] z-40 border-t border-outline-variant/40 bg-surface/95 px-gutter-mobile py-3 shadow-[0_-4px_20px_rgba(42,36,33,0.06)] backdrop-blur-xl md:bottom-0 md:px-6 lg:hidden">
+      <div className="fixed inset-x-0 bottom-[calc(6rem+env(safe-area-inset-bottom,0px))] z-40 border-t border-outline-variant/40 bg-surface/95 px-gutter-mobile py-3 shadow-[0_-4px_20px_rgba(155,31,85,0.08)] backdrop-blur-xl md:bottom-0 md:px-6 lg:hidden">
         <div className="mx-auto flex max-w-md items-center gap-3">
           <WishlistButton productName={product.name} />
           <AddToCartButton product={product} variant={variant} qty={qty} />

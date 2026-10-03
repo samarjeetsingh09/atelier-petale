@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
 import { Icon } from './Icon';
+import { Sparkle } from './FlightPath';
 
 /**
- * The Stitch section rhythm: a small tracked uppercase eyebrow, a Playfair
- * headline, and optional supporting copy. Used on every page so section
+ * Section rhythm: a brush-script eyebrow (the logo's own hand), a soft
+ * Fraunces headline, and optional supporting copy. Used on every page so section
  * hierarchy reads the same everywhere.
  */
 export function SectionHeader({
@@ -41,9 +42,9 @@ export function SectionHeader({
       <div className={`flex flex-col ${align === 'center' ? 'mx-auto items-center' : ''}`}>
         {eyebrow && (
           <span
-            className={`flex items-center gap-1.5 text-label-sm font-semibold uppercase tracking-widest ${toneClass}`}
+            className={`flex items-center gap-1.5 font-script text-[1.35rem] leading-none md:text-[1.6rem] ${toneClass}`}
           >
-            {eyebrowIcon && <Icon name={eyebrowIcon} size={16} />}
+            {eyebrowIcon ? <Icon name={eyebrowIcon} size={18} /> : <Sparkle size={13} tone="butter" />}
             {eyebrow}
           </span>
         )}

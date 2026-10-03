@@ -5,25 +5,28 @@ type Variant = 'primary' | 'secondary' | 'quiet' | 'onImage' | 'whatsapp';
 type Size = 'sm' | 'md' | 'lg';
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-xl font-body cursor-pointer ' +
-  'transition-colors duration-200 active:scale-[0.98] transition-transform ' +
+  'inline-flex items-center justify-center gap-2 rounded-full font-body font-bold cursor-pointer ' +
+  'transition-[background-color,box-shadow,transform] duration-200 active:scale-[0.97] ' +
   'disabled:cursor-not-allowed disabled:opacity-60 disabled:active:scale-100';
 
 const variants: Record<Variant, string> = {
-  // Dried rose. The only variant that carries text on a fill — it is the one that passes contrast.
-  primary: 'bg-primary text-on-primary hover:bg-on-primary-fixed-variant',
-  secondary: 'bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant',
+  // Strokes pink, deepened from the logo hue so white text clears 4.5:1.
+  primary:
+    'bg-primary text-on-primary shadow-[0_6px_16px_-6px_rgba(194,48,111,0.55)] hover:bg-on-primary-fixed-variant',
+  // Lilac, from the "my" lettering.
+  secondary:
+    'bg-secondary text-on-secondary shadow-[0_6px_16px_-6px_rgba(139,79,156,0.55)] hover:bg-on-secondary-fixed-variant',
   quiet:
-    'bg-surface-container-high text-on-surface hover:bg-surface-container-highest border border-outline-variant/60',
+    'bg-surface-container-lowest text-primary hover:bg-primary-fixed border-2 border-primary-fixed-dim',
   onImage: 'bg-white/15 text-white backdrop-blur-md hover:bg-white/25',
   whatsapp: 'bg-whatsapp text-white hover:bg-whatsapp-dark',
 };
 
 // Every size clears the 44px touch minimum.
 const sizes: Record<Size, string> = {
-  sm: 'min-h-[44px] px-4 py-2.5 text-label-md uppercase',
-  md: 'min-h-[48px] px-5 py-3 text-label-md uppercase',
-  lg: 'min-h-[52px] px-6 py-3.5 text-label-lg',
+  sm: 'min-h-[44px] px-5 py-2.5 text-body-sm',
+  md: 'min-h-[48px] px-6 py-3 text-body-md',
+  lg: 'min-h-[52px] px-7 py-3.5 text-body-md',
 };
 
 interface CommonProps {

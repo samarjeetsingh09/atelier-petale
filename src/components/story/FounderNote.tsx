@@ -37,8 +37,8 @@ export function FounderNote() {
           <div className="flex flex-col gap-space-md p-space-lg lg:col-span-7 lg:justify-center lg:p-space-2xl">
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col">
-                <span className="text-label-sm font-semibold uppercase tracking-widest text-primary">
-                  Meet the maker
+                <span className="font-script text-[1.35rem] leading-none md:text-[1.6rem] normal-case tracking-normal text-secondary">
+                  meet the maker
                 </span>
                 <h2
                   id="founder-heading"

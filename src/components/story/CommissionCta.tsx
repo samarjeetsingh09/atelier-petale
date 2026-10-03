@@ -30,7 +30,7 @@ export function CommissionCta() {
           />
 
           <div className="relative z-10 flex flex-col gap-1.5 lg:col-span-6">
-            <span className="flex items-center gap-1.5 text-label-sm font-semibold uppercase tracking-widest text-secondary">
+            <span className="flex items-center gap-1.5 font-script text-[1.35rem] leading-none md:text-[1.6rem] normal-case tracking-normal text-secondary">
               <Icon name="temp_preferences_custom" size={18} />
               Custom bespoke commissions
             </span>

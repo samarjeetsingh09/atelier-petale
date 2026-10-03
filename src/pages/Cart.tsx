@@ -31,8 +31,8 @@ function EmptyCart() {
 
 export function Cart() {
   const { resolvedLines, subtotal, totalHours, itemCount } = useCart();
-  const [customerName, setCustomerName] = useLocalStorageState('atelier-petale.name.v1');
-  const [giftNote, setGiftNote] = useLocalStorageState('atelier-petale.note.v1');
+  const [customerName, setCustomerName] = useLocalStorageState('my-strokes.name.v1');
+  const [giftNote, setGiftNote] = useLocalStorageState('my-strokes.note.v1');
   const [nameErrorShown, setNameErrorShown] = useState(false);
 
   // Tapping send without a name explains the problem and takes them to it,
@@ -54,9 +54,8 @@ export function Cart() {
   return (
     <Container width="wide" className="flex flex-col gap-space-lg py-space-md lg:py-space-xl">
       <header>
-        <span className="mb-1.5 flex items-center gap-2 text-label-sm uppercase tracking-widest text-primary">
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          Selected flora
+        <span className="mb-1.5 flex items-center gap-2 font-script text-[1.35rem] leading-none md:text-[1.6rem] normal-case tracking-normal text-secondary">
+          your picks
         </span>
         <h1 className="text-headline-lg-mobile text-on-surface lg:text-headline-lg">
           Your little collection
@@ -92,7 +91,7 @@ export function Cart() {
           </div>
 
           {/* Summary + checkout — sticky beside the items on desktop */}
-          <div className="flex flex-col gap-space-lg lg:sticky lg:top-28 lg:col-span-5">
+          <div className="flex flex-col gap-space-lg lg:sticky lg:top-40 lg:col-span-5">
             <OrderSummary subtotal={subtotal} totalHours={totalHours} />
             <WhatsAppCheckout order={order} onMissingName={focusNameField} />
             <TrustPillars />

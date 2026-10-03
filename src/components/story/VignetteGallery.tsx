@@ -15,7 +15,7 @@ export function VignetteGallery() {
     >
       <Container width="wide">
         <SectionHeader
-          eyebrow="Atelier vignettes"
+          eyebrow="Studio moments"
           eyebrowTone="secondary"
           title={<span id="vignettes-heading">Behind the stitches</span>}
           action={

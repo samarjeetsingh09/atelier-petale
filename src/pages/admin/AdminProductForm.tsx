@@ -164,7 +164,7 @@ export function AdminProductForm() {
           />
           <TextField
             label="Web address"
-            hint={`atelier-petale.com/product/${draft.slug || slugify(draft.name) || '…'}`}
+            hint={`mystrokes.com/product/${draft.slug || slugify(draft.name) || '…'}`}
             value={draft.slug}
             onChange={(slug) => patch({ slug: slugify(slug) })}
             placeholder="Leave blank to build from the name"

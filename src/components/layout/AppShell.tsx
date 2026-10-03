@@ -19,7 +19,7 @@ function ScrollToTop() {
  * bar, footer.
  *
  * Spacing rules that everything else depends on:
- *  - `pt-16 md:pt-20` clears the fixed header.
+ *  - `pt-[8.25rem] sm:pt-[9rem]` clears the offers strip and the header pill.
  *  - The outer wrapper carries `pb-16 md:pb-0` so the footer is never hidden
  *    behind the mobile tab bar.
  *  - Product detail adds its own sticky bar, so it gets extra bottom room.
@@ -51,7 +51,7 @@ export function AppShell() {
         id="main"
         className={[
           // Clears the offers strip (2rem) plus the floating header pill.
-          'flex flex-1 flex-col pt-[7.75rem] sm:pt-[8.5rem]',
+          'flex flex-1 flex-col pt-[8.25rem] sm:pt-[9rem]',
           // Product detail carries a sticky buy bar below lg — leave room for it.
           isProductDetail ? 'pb-[5rem] lg:pb-8' : 'pb-space-lg',
         ].join(' ')}

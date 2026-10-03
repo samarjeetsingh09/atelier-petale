@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { LogoMark } from '@/components/ui/Logo';
+import { FlightPath } from '@/components/ui/FlightPath';
 import { siteConfig } from '@/config/site';
 import { buildEnquiryLink } from '@/lib/whatsapp';
 import { navItems } from './navItems';
@@ -9,14 +10,15 @@ import { navItems } from './navItems';
 export function Footer() {
   return (
     <footer className="mt-space-2xl border-t border-outline-variant/50 bg-surface-container-low">
-      <Container width="wide" className="py-space-xl md:py-space-2xl">
+      <Container width="wide" className="relative py-space-xl md:py-space-2xl">
+        <FlightPath
+          animate={false}
+          className="pointer-events-none absolute -top-10 right-4 hidden w-64 opacity-80 md:block"
+        />
         <div className="flex flex-col gap-space-lg md:flex-row md:justify-between md:gap-space-2xl">
           <div className="max-w-sm">
-            <Link to="/" className="flex items-center gap-2.5 text-primary">
-              <LogoMark size={30} />
-              <span className="font-display text-headline-sm text-on-surface">
-                {siteConfig.name}
-              </span>
+            <Link to="/" aria-label={`${siteConfig.name}, home`} className="inline-flex">
+              <LogoMark size={128} />
             </Link>
             <p className="mt-3 text-body-sm text-on-surface-variant">
               Hand-crocheted flower bouquets, made to order in {siteConfig.location}. Every piece is
@@ -81,7 +83,7 @@ export function Footer() {
           <span className="text-primary">
             <Icon name="volunteer_activism" size={16} />
           </span>
-          Crocheted slowly, in small batches, in {siteConfig.location}.
+          Made slowly, in small batches, in {siteConfig.location}.
         </p>
       </Container>
     </footer>

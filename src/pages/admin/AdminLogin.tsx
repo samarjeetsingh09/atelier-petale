@@ -46,7 +46,7 @@ export function AdminLogin() {
           </span>
           <h1 className="font-display text-headline-md text-on-surface">Studio sign in</h1>
           <p className="text-body-sm text-on-surface-variant">
-            For the Atelier Pétale studio. This page is not for customers.
+            For the my strokes studio. This page is not for customers.
           </p>
         </div>
 

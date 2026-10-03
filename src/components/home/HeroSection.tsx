@@ -1,12 +1,14 @@
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
+import { FlightPath, Sparkle } from '@/components/ui/FlightPath';
 import { images } from '@/data/images';
 
 const copy = {
-  pill: '100% hand-knitted · everlasting',
-  eyebrow: 'Atelier signature',
-  heading: 'Flowers that last forever.',
+  pill: '100% handmade · made to order',
+  eyebrow: 'made by hand, sent with love',
+  headingLead: 'Flowers that last',
+  headingAccent: 'forever.',
   body: 'Handcrafted crochet blooms, made with patience, love and a little bit of magic.',
 };
 
@@ -18,68 +20,82 @@ const heroImage = {
 function StatusPill({ className = '' }: { className?: string }) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full bg-surface-container-lowest/90 px-3 py-1 text-label-sm font-medium tracking-wide text-on-surface shadow-sm backdrop-blur-md ${className}`}
+      className={`sticker inline-flex items-center gap-1.5 rounded-full bg-surface-container-lowest px-3 py-1 text-label-sm font-bold text-on-surface ${className}`}
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+      <Sparkle size={12} tone="butter" />
       {copy.pill}
     </span>
   );
 }
 
+function Heading({ className = '' }: { className?: string }) {
+  return (
+    <h1 className={className}>
+      {copy.headingLead}{' '}
+      <em className="text-brand-gradient italic">{copy.headingAccent}</em>
+    </h1>
+  );
+}
+
+/** The photo, mounted like a print with the logo's white sticker edge. */
+function HeroPhoto({ className = '' }: { className?: string }) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-[2rem] border-[6px] border-white bg-surface-container shadow-[0_24px_48px_-20px_rgba(155,31,85,0.45)] ${className}`}
+    >
+      <img
+        src={heroImage.src}
+        alt={heroImage.alt}
+        fetchPriority="high"
+        decoding="async"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
+}
+
 /**
- * Mobile keeps the Stitch treatment exactly: a 4:5 photo with the headline
- * overlaid on a bottom scrim. From lg the same elements re-compose into a
- * split editorial spread rather than stretching the overlay across a wide
- * screen, where the scrim would swamp the photograph.
+ * The paper plane from the logo flies out of the headline and across to the
+ * photograph, drawing its dashed heart-loop on arrival. That trail is the one
+ * piece of motion on the page; everything around it holds still.
  */
 export function HeroSection() {
   return (
-    <section className="pb-space-lg pt-3">
+    <section className="relative overflow-hidden pb-space-xl pt-4 lg:pb-space-3xl lg:pt-space-xl">
       <Container width="wide">
-        {/* Mobile & tablet: overlay composition */}
-        <div className="relative overflow-hidden rounded-2xl bg-surface-container shadow-md lg:hidden">
-          <div className="relative aspect-[4/5] w-full sm:aspect-[16/11]">
-            <img
-              src={heroImage.src}
-              alt={heroImage.alt}
-              fetchPriority="high"
-              decoding="async"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/30 to-transparent" />
-            <StatusPill className="absolute left-3.5 top-3.5" />
+        {/* Mobile & tablet: copy first, the trail, then the photo */}
+        <div className="flex flex-col lg:hidden">
+          <StatusPill className="self-start" />
+          <span className="mt-4 font-script text-[1.5rem] leading-none text-secondary">
+            {copy.eyebrow}
+          </span>
+          <Heading className="mt-2 text-display-lg-mobile text-on-surface sm:text-headline-lg" />
+          <p className="mt-2 max-w-md text-body-md text-on-surface-variant">{copy.body}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <Button to="/shop" size="md">
+              Explore collection
+              <Icon name="arrow_downward" size={18} />
+            </Button>
+            <Button to="/story" variant="quiet" size="md">
+              Our story
+            </Button>
+          </div>
 
-            <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-5">
-              <span className="text-label-sm uppercase tracking-widest text-secondary-fixed">
-                {copy.eyebrow}
-              </span>
-              <h1 className="font-display text-headline-lg-mobile leading-tight text-white drop-shadow-sm sm:text-headline-lg">
-                {copy.heading}
-              </h1>
-              <p className="line-clamp-2 max-w-md text-body-sm font-light leading-relaxed text-surface-container-high/90">
-                {copy.body}
-              </p>
-              <div className="mt-2 flex flex-wrap items-center gap-3">
-                <Button to="/shop" size="sm">
-                  Explore collection
-                  <Icon name="arrow_downward" size={16} />
-                </Button>
-                <Button to="/story" variant="onImage" size="sm">
-                  Our story
-                </Button>
-              </div>
-            </div>
+          <div className="relative mt-2">
+            <FlightPath className="pointer-events-none relative z-10 -mb-10 ml-auto block w-[78%] max-w-sm" />
+            <HeroPhoto className="aspect-[4/5] rotate-[1.5deg] sm:aspect-[16/11]" />
+            <Sparkle size={22} twinkle className="absolute -left-1 bottom-10 z-10" />
           </div>
         </div>
 
-        {/* Desktop: editorial split */}
-        <div className="hidden lg:grid lg:grid-cols-12 lg:items-center lg:gap-space-2xl">
-          <div className="lg:col-span-5">
+        {/* Desktop: copy left, photo right, the trail bridging the two */}
+        <div className="relative hidden lg:grid lg:grid-cols-12 lg:items-center lg:gap-space-2xl">
+          <div className="relative z-10 lg:col-span-5">
             <StatusPill className="mb-space-lg" />
-            <span className="block text-label-md uppercase tracking-widest text-primary">
+            <span className="block font-script text-[2rem] leading-none text-secondary">
               {copy.eyebrow}
             </span>
-            <h1 className="mt-3 font-display text-display-lg text-on-surface">{copy.heading}</h1>
+            <Heading className="mt-3 text-display-lg text-on-surface xl:text-[4.25rem]" />
             <p className="mt-space-md max-w-md text-body-lg text-on-surface-variant">{copy.body}</p>
             <div className="mt-space-lg flex flex-wrap items-center gap-3">
               <Button to="/shop" size="lg">
@@ -92,16 +108,11 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
-            <div className="relative overflow-hidden rounded-2xl bg-surface-container shadow-md">
-              <img
-                src={heroImage.src}
-                alt={heroImage.alt}
-                fetchPriority="high"
-                decoding="async"
-                className="aspect-[5/4] w-full object-cover"
-              />
-            </div>
+          <div className="relative lg:col-span-7">
+            <FlightPath className="pointer-events-none absolute -left-24 -top-16 z-10 w-[26rem]" />
+            <HeroPhoto className="aspect-[5/4] rotate-[1.5deg]" />
+            <Sparkle size={28} twinkle className="absolute -right-3 -top-4" />
+            <Sparkle size={18} tone="lilac" className="absolute -bottom-5 left-10" />
           </div>
         </div>
       </Container>

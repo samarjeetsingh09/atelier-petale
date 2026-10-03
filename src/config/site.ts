@@ -3,12 +3,12 @@
  * Swap the WhatsApp number here and every checkout / enquiry link follows.
  */
 export const siteConfig = {
-  name: 'Atelier Pétale',
-  tagline: 'Hand-crocheted flower bouquets',
+  name: 'my strokes',
+  tagline: 'Handmade with love',
   location: 'Mumbai, India',
   makerName: 'Shreya',
-  instagram: '@atelier.petale',
-  instagramUrl: 'https://instagram.com/atelier.petale',
+  instagram: '@mystrokes9',
+  instagramUrl: 'https://www.instagram.com/mystrokes9/',
 
   /** Country code + number, digits only. No "+", no spaces. */
   whatsappNumber: '919115090584',
@@ -23,4 +23,4 @@ export const siteConfig = {
   },
 } as const;
 
-export const CART_STORAGE_KEY = 'atelier-petale.cart.v1';
+export const CART_STORAGE_KEY = 'my-strokes.cart.v1';

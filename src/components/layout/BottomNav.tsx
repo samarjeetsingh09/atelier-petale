@@ -5,7 +5,7 @@ import { navItems } from './navItems';
 
 /** Same raised-pill treatment as the header, so the two read as one system. */
 const pillShadow =
-  'shadow-[0_1px_2px_rgba(42,36,33,0.05),0_-10px_28px_-12px_rgba(42,36,33,0.28),inset_0_1px_0_rgba(255,255,255,0.85),inset_0_-1px_0_rgba(42,36,33,0.07)]';
+  'shadow-[0_1px_2px_rgba(155,31,85,0.06),0_-10px_28px_-12px_rgba(155,31,85,0.30),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-1px_0_rgba(155,31,85,0.08)]';
 
 export function BottomNav() {
   const { itemCount } = useCart();
@@ -38,7 +38,7 @@ export function BottomNav() {
                 [
                   'relative flex min-h-[44px] w-full flex-col items-center justify-center gap-0.5 rounded-full py-1 transition-colors duration-200',
                   isActive
-                    ? 'bg-surface-container font-semibold text-primary shadow-[inset_0_1px_3px_rgba(42,36,33,0.10)]'
+                    ? 'bg-primary-fixed font-semibold text-primary shadow-[inset_0_1px_3px_rgba(155,31,85,0.12)]'
                     : 'text-on-surface-variant',
                 ].join(' ')
               }

@@ -2,9 +2,9 @@ import type { BadgeTone } from '@/types';
 import type { ReactNode } from 'react';
 
 const tones: Record<BadgeTone, string> = {
-  bestseller: 'bg-surface-container-lowest/90 text-primary backdrop-blur-sm',
-  trending: 'bg-secondary text-on-secondary',
-  artisan: 'bg-surface-container-highest text-on-surface-variant',
+  bestseller: 'bg-primary-fixed text-on-primary-fixed-variant',
+  trending: 'bg-secondary-container text-on-secondary-container',
+  artisan: 'bg-tertiary-fixed text-on-tertiary-fixed-variant',
   neutral: 'bg-surface-container-highest text-on-surface-variant',
 };
 
@@ -19,7 +19,7 @@ export function Badge({
 }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${tones[tone]} ${className}`}
+      className={`sticker inline-flex -rotate-3 items-center rounded-full px-2.5 py-0.5 text-[11px] font-extrabold ${tones[tone]} ${className}`}
     >
       {children}
     </span>

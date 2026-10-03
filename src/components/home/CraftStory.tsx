@@ -39,8 +39,8 @@ export function CraftStory() {
           </div>
 
           <div className="flex flex-col gap-2 lg:col-span-6">
-            <span className="text-label-sm font-semibold uppercase tracking-widest text-primary">
-              The slow craft philosophy
+            <span className="font-script text-[1.35rem] leading-none md:text-[1.6rem] normal-case tracking-normal text-secondary">
+              the slow craft philosophy
             </span>
             <h2 className="text-headline-md leading-tight text-on-surface lg:text-headline-lg">
               Made by hand, meant to be kept.

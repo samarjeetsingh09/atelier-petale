@@ -14,9 +14,8 @@ export function StoryHero() {
       <Container width="wide">
         <div className="flex flex-col gap-space-sm lg:grid lg:grid-cols-12 lg:items-center lg:gap-space-2xl">
           <div className="flex flex-col gap-space-sm lg:col-span-5">
-            <span className="flex items-center gap-space-xs text-label-sm uppercase tracking-widest text-primary">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-              The atelier chronicle · our story
+            <span className="flex items-center gap-space-xs font-script text-[1.35rem] leading-none md:text-[1.6rem] normal-case tracking-normal text-secondary">
+              our little story
             </span>
 
             <h1 className="text-headline-lg-mobile font-medium leading-tight text-on-surface lg:text-display-lg">

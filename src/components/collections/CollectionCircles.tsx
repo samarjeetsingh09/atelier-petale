@@ -52,7 +52,7 @@ export function CollectionCircles({
       <Container width="wide" className="flex items-center justify-between gap-3">
         <h2
           id="collections-heading"
-          className="text-label-sm font-medium uppercase tracking-widest text-on-surface-variant"
+          className="font-script text-[1.35rem] leading-none md:text-[1.6rem] normal-case tracking-normal text-secondary"
         >
           {heading}
         </h2>

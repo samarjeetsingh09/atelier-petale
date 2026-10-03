@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Icon } from '@/components/ui/Icon';
 import { LogoMark } from '@/components/ui/Logo';
+import { siteConfig } from '@/config/site';
 import { useCart } from '@/store/cart-context';
 import { AnnouncementBar } from './AnnouncementBar';
 import { navItems } from './navItems';
@@ -12,7 +13,7 @@ import { SearchDialog } from './SearchDialog';
  * along the top edge and an inset shade along the bottom give it thickness.
  */
 const pillShadow =
-  'shadow-[0_1px_2px_rgba(42,36,33,0.05),0_10px_28px_-10px_rgba(42,36,33,0.28),inset_0_1px_0_rgba(255,255,255,0.85),inset_0_-1px_0_rgba(42,36,33,0.07)]';
+  'shadow-[0_1px_2px_rgba(155,31,85,0.06),0_10px_28px_-10px_rgba(155,31,85,0.30),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-1px_0_rgba(155,31,85,0.08)]';
 
 function CartBadge({ count }: { count: number }) {
   if (count === 0) return null;
@@ -45,9 +46,9 @@ export function Header({ showBack = false, backTitle }: HeaderProps) {
           <AnnouncementBar />
         </div>
 
-        <div className="px-4 pt-3 sm:px-5 sm:pt-4">
+        <div className="px-5 pt-3 sm:px-8 sm:pt-4">
           <div
-            className={`mx-auto grid h-[4.5rem] w-full max-w-wide grid-cols-[1fr_auto_1fr] items-center gap-2 rounded-full border border-white/60 bg-surface/80 px-3 backdrop-blur-xl sm:h-20 sm:px-4 ${pillShadow}`}
+            className={`mx-auto grid h-20 w-full max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-2 rounded-full border border-white/60 bg-surface/80 px-3 backdrop-blur-xl sm:h-[5.5rem] sm:px-4 ${pillShadow}`}
           >
             {/* Left: desktop navigation, or a back control on mobile product pages */}
             <div className="flex min-w-0 items-center justify-start">
@@ -73,7 +74,7 @@ export function Header({ showBack = false, backTitle }: HeaderProps) {
                           [
                             'flex min-h-[44px] items-center rounded-full px-4 text-label-md uppercase transition-colors duration-200',
                             isActive
-                              ? 'bg-surface-container text-primary shadow-[inset_0_1px_3px_rgba(42,36,33,0.10)]'
+                              ? 'bg-primary-fixed text-primary shadow-[inset_0_1px_3px_rgba(155,31,85,0.12)]'
                               : 'text-on-surface-variant hover:bg-surface-container/70 hover:text-primary',
                           ].join(' ')
                         }
@@ -90,13 +91,15 @@ export function Header({ showBack = false, backTitle }: HeaderProps) {
             <div className="flex min-w-0 items-center justify-center">
               <Link
                 to="/"
-                aria-label="Atelier Pétale, home"
-                className="flex min-h-[44px] items-center gap-2.5 rounded-full px-2 text-primary transition-opacity duration-200 hover:opacity-80"
+                aria-label={`${siteConfig.name}, home`}
+                className="flex min-h-[44px] items-center gap-2.5 rounded-full px-2 transition-opacity duration-200 hover:opacity-80"
               >
-                <LogoMark size={30} />
-                <span className="truncate font-display text-headline-sm leading-none tracking-tight text-on-surface">
-                  {backTitle ?? 'Atelier Pétale'}
-                </span>
+                <LogoMark size={68} className="sm:!h-[76px]" />
+                {backTitle && (
+                  <span className="truncate font-display text-headline-sm leading-none text-on-surface">
+                    {backTitle}
+                  </span>
+                )}
               </Link>
             </div>
 

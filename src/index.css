@@ -1,64 +1,75 @@
 @import 'tailwindcss';
 
 /* ---------------------------------------------------------------------------
-   Atelier Pétale design tokens.
-   Values are lifted verbatim from the Stitch "Atelier Pétale" design system so
-   the build stays 1:1 with the source of truth. Do not re-derive these by eye.
+   my strokes design tokens.
+   Every hue is sampled from the client logo, not picked by eye:
+     blush paper  #fbf0f6  (logo ground)
+     strokes pink #ed6699  (the "strokes" lettering)
+     lilac        #ce8ecf  (the "my" lettering)
+     denim        #81a0cc / #c4d7e9  (her jacket)
+     butter       #fce990  (the sparkle)
+     cocoa        #371d04  (her hair) -> warmed into the ink colour
+   Fill colours that carry white text are deepened versions of the logo hues so
+   they clear 4.5:1; the logo hues themselves are kept for containers.
    --------------------------------------------------------------------------- */
 @theme {
-  /* Surfaces — warm ivory paper stack */
-  --color-surface: #fff8f6;
-  --color-surface-dim: #e3d8d3;
-  --color-surface-bright: #fff8f6;
+  /* Surfaces — blush paper stack */
+  --color-surface: #fff7fa;
+  --color-surface-dim: #ead3de;
+  --color-surface-bright: #fff7fa;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #fdf1ec;
-  --color-surface-container: #f8ebe6;
-  --color-surface-container-high: #f2e6e1;
-  --color-surface-container-highest: #ece0db;
-  --color-surface-variant: #ece0db;
-  --color-background: #fff8f6;
+  --color-surface-container-low: #fdf0f6;
+  --color-surface-container: #fbe8f0;
+  --color-surface-container-high: #f7e1eb;
+  --color-surface-container-highest: #f2d9e5;
+  --color-surface-variant: #f2d9e5;
+  --color-background: #fff7fa;
 
-  /* Ink */
-  --color-on-surface: #201a18;
-  --color-on-background: #201a18;
-  --color-on-surface-variant: #514345;
-  --color-outline: #837375;
-  --color-outline-variant: #d5c2c3;
+  /* Ink — cocoa, from her hair */
+  --color-on-surface: #3a2218;
+  --color-on-background: #3a2218;
+  --color-on-surface-variant: #6b4c55;
+  --color-outline: #8f6f7b;
+  --color-outline-variant: #ebcdda;
 
-  /* Primary — dried rose */
-  --color-primary: #844f58;
+  /* Primary — strokes pink */
+  --color-primary: #c2306f;
   --color-on-primary: #ffffff;
-  --color-primary-container: #c98b94;
-  --color-on-primary-container: #52262e;
-  --color-primary-fixed: #ffd9dd;
-  --color-primary-fixed-dim: #f8b5be;
-  --color-on-primary-fixed: #350e17;
-  --color-on-primary-fixed-variant: #693841;
+  --color-primary-container: #ed6699;
+  --color-on-primary-container: #4a0a27;
+  --color-primary-fixed: #ffd9e6;
+  --color-primary-fixed-dim: #f7a8c7;
+  --color-on-primary-fixed: #3d0620;
+  --color-on-primary-fixed-variant: #9b1f55;
 
-  /* Secondary — eucalyptus sage */
-  --color-secondary: #4e635a;
+  /* Secondary — lilac */
+  --color-secondary: #8b4f9c;
   --color-on-secondary: #ffffff;
-  --color-secondary-container: #cee5da;
-  --color-on-secondary-container: #52675e;
-  --color-secondary-fixed: #d1e8dd;
-  --color-secondary-fixed-dim: #b5ccc1;
-  --color-on-secondary-fixed: #0b1f18;
-  --color-on-secondary-fixed-variant: #374b43;
+  --color-secondary-container: #f0ddf4;
+  --color-on-secondary-container: #5e2e6c;
+  --color-secondary-fixed: #f3e0f7;
+  --color-secondary-fixed-dim: #ddbbe4;
+  --color-on-secondary-fixed: #2e0b3a;
+  --color-on-secondary-fixed-variant: #6e3a7e;
 
-  /* Tertiary — muted blush */
-  --color-tertiary: #72585a;
+  /* Tertiary — denim */
+  --color-tertiary: #3f6797;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #b49497;
-  --color-on-tertiary-container: #442d30;
-  --color-tertiary-fixed: #fedadd;
-  --color-tertiary-fixed-dim: #e1bec1;
-  --color-on-tertiary-fixed: #2a1619;
-  --color-on-tertiary-fixed-variant: #594043;
+  --color-tertiary-container: #c4d7e9;
+  --color-on-tertiary-container: #1e3a5c;
+  --color-tertiary-fixed: #d9e6f4;
+  --color-tertiary-fixed-dim: #a9c2e0;
+  --color-on-tertiary-fixed: #0d2340;
+  --color-on-tertiary-fixed-variant: #2f5482;
+
+  /* Sparkle — decoration only, never carries text on white */
+  --color-sparkle: #fce990;
+  --color-sparkle-deep: #e9b949;
 
   /* Inverse — toasts, overlays */
-  --color-inverse-surface: #362f2c;
-  --color-inverse-on-surface: #fbeee9;
-  --color-inverse-primary: #f8b5be;
+  --color-inverse-surface: #3a2218;
+  --color-inverse-on-surface: #fdf0f6;
+  --color-inverse-primary: #f7a8c7;
 
   /* Status */
   --color-error: #ba1a1a;
@@ -71,8 +82,11 @@
   --color-whatsapp-dark: #1ebe5d;
 
   /* Typography */
-  --font-display: 'Playfair Display', ui-serif, Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  /* Fraunces at full SOFT reads like a brush-rounded serif; Damion is the
+     brush script of the logo's "strokes", kept for short accents only. */
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-script: 'Damion', 'Brush Script MT', cursive;
+  --font-body: 'Nunito', ui-sans-serif, system-ui, sans-serif;
 
   --text-display-lg: 3.5rem;
   --text-display-lg--line-height: 1.15;
@@ -174,7 +188,10 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 500;
+    font-weight: 600;
+    font-variation-settings:
+      'SOFT' 100,
+      'WONK' 0;
     margin: 0;
   }
 
@@ -193,6 +210,27 @@
 }
 
 @layer utilities {
+  /* The logo's lettering runs lilac into pink; used on the wordmark and on a
+     single highlighted word per heading at most. */
+  .text-brand-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-secondary) 0%,
+      #b0479a 45%,
+      var(--color-primary) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Sticker edge: the white halo the logo puts behind its wordmark. */
+  .sticker {
+    box-shadow:
+      0 0 0 2px #ffffff,
+      0 4px 12px -4px rgba(194, 48, 111, 0.35);
+  }
+
   .no-scrollbar {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -235,6 +273,37 @@
       'wght' 400,
       'GRAD' 0,
       'opsz' 24;
+  }
+}
+
+/* The paper plane's trail draws itself once on load. */
+@keyframes trail-draw {
+  from {
+    stroke-dashoffset: var(--trail-length);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes plane-arrive {
+  from {
+    opacity: 0;
+    transform: translate(-14px, 10px) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
   }
 }
 

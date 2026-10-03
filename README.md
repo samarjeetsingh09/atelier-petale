@@ -1,4 +1,4 @@
-# Atelier Pétale
+# my strokes
 
 Mobile-first storefront for hand-crocheted flower bouquets. Vite + React + TypeScript + Tailwind v4.
 Orders are placed over WhatsApp — there is no auth, no payment gateway, no order backend.
@@ -38,12 +38,18 @@ src/
 
 ## Design source
 
-Colours, type scale and spacing are lifted verbatim from the Stitch "Atelier Pétale"
-design system — see the `@theme` block in `src/index.css`. Do not re-derive them by eye.
+The theme is extracted from the client logo (`public/brand/logo.jpg`); the sampled
+hues and what each became are listed at the top of the `@theme` block in `src/index.css`.
 
-Stitch only specifies mobile screens. Tablet and desktop extend the same tokens:
-the bottom tab bar is replaced by header navigation from `md`, grids step 2 → 3 → 4
-columns, and the hero re-composes from an image overlay into a split spread at `lg`.
+- Type: Fraunces (headings, full `SOFT` axis), Damion (brush-script accents — eyebrows and
+  the wordmark only), Nunito (body).
+- Logo: `public/brand/avatar.png` is a round crop of the illustration, used as the mark and
+  favicon. The "my strokes" wordmark is live text (`src/components/ui/Logo.tsx`).
+- Signature: the paper plane and dashed heart-loop trail from the logo
+  (`src/components/ui/FlightPath.tsx`), drawn once in the hero and static in the footer.
+
+Tablet and desktop extend the same tokens: the bottom tab bar is replaced by header
+navigation from `md`, grids step 2 → 3 → 4 columns, and the hero becomes a split spread at `lg`.
 
 ## Conventions
 

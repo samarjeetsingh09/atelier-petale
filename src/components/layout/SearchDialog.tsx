@@ -88,7 +88,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
         role="dialog"
         aria-modal="true"
         aria-label="Search the boutique"
-        className="relative mx-3 mt-3 w-full max-w-xl overflow-hidden rounded-3xl bg-surface shadow-[0_24px_60px_-16px_rgba(42,36,33,0.35)] sm:mt-20"
+        className="relative mx-3 mt-3 w-full max-w-xl overflow-hidden rounded-3xl bg-surface shadow-[0_24px_60px_-16px_rgba(155,31,85,0.30)] sm:mt-20"
       >
         <form onSubmit={submit} className="flex items-center gap-2 px-3 py-2">
           <span className="pl-1 text-on-surface-variant">
