@@ -15,7 +15,8 @@ function ScrollToTop() {
 }
 
 /**
- * The frame every route renders inside: fixed header, scrolling main, mobile tab
+ * The frame every route renders inside: header (scrolls away on phones, fixed
+ * from md up), scrolling main, mobile tab
  * bar, footer.
  *
  * Spacing rules that everything else depends on:

@@ -39,7 +39,7 @@ export function Header({ showBack = false, backTitle }: HeaderProps) {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50">
+      <header className="absolute inset-x-0 top-0 z-50 md:fixed">
         {/* Offers strip runs full width, hard against the top edge; the safe
             area is folded into its padding so it clears a notch. */}
         <div className="pt-[env(safe-area-inset-top,0px)]">
